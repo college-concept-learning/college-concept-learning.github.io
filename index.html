@@ -128,7 +128,6 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- First Paragaph -->
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -136,33 +135,46 @@
         <h2 class="title is-3">Building Machines that Learn Concepts Quickly</h2>
         <div class="content has-text-justified">
           <p>
-            Placeholder
+            Imagine a student first attending a philosophy lecture on epistemology, wherein their professor discusses and critiques various philosophical positions and uses unfamiliar terms for newly-encountered concepts. After only a few examples, the student can quickly build an intuition about these new concepts and consolidate this knowledge. 
           </p>
+          <p>
+            In this way, humans can quickly infer the meaning of new words, even having only heard them used a few times, in settings like the philosophy lecture above or when encountering slang terms on social media, but LLMs fail at doing the same.
+          </p>
+          <p>
+            While humans can quickly abstract from a few examples to consolidate new knowledge, LLMs attempt to directly find and re-use information in the available context.
+          </p>
+          <p>We:</p>
+          <ul>
+            <li>Develop a simple add-on learnable module for few-shot, LLM concept learning, which transfers to diverse tasks with <b>no additional finetuning</b></li>
+            <li>Build a few-shot concept learning dataset from a large pretraining dataset (The Pile)</li>
+            <li>Present three challenging datasets for new concept learning, CoLLEGe-GRE, CoLLEGe-DefGen, and CoLLEGe-Slang,
+              used to measure the effectiveness of few-shot concept learning methods for LLMs. These
+              datasets test both general and complex concept knowledge, naturalistic acquisition of
+              new concepts, and relational abstraction</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End First Paragraph -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-4 has-text-centered mb-5">Method</h3>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <figure class="image">
+          <img src="static/images/colm_paper_arch.svg" alt="CoLM Paper Architecture" style="width: 100%; height: auto;">
+          <figcaption class="has-text-justified mt-4">
+            We design a few-shot learning method which generates a new concept embedding using support sequences containing a new concept token. This embedding is optimized to allow a frozen pretrained LLM to model a query sequence containing the same new token.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Second Paragaph -->
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Few-Shot Learning Through CoLLEGe</h2>
-        <div class="content has-text-justified">
-          <p>
-            Placeholder
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Second Paragraph -->
-
-<!-- Third Paragaph -->
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -170,14 +182,107 @@
         <h2 class="title is-3">Task-General Training for Zero-Shot Transfer</h2>
         <div class="content has-text-justified">
           <p>
-            Placeholder
+            We select words to mask with new tokens based on frequency and construct few-shot support and query sequences from a large pretraining dataset, the Pile
           </p>
+          <p>Training mimics pretraining, allowing transfer to diverse tasks zero-shot, with <b>no additional finetuning</b> to transfer to our tasks
+          </p>
+          <p>
+            We train by minimizing <b>cross entropy losses</b> on positive and negative examples as well as <b>distilling from the base LLM</b>
+          </p>
+          <figure class="image">
+            <img src="static/images/college_losses.png" alt="CoLM Losses" style="width: 100%; height: auto;">
+          </figure>  
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End Third Paragraph -->
+<!-- End Second Paragraph -->
+
+<!-- Second Paragaph -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <!-- <div class="column is-four-fifths"> -->
+        <h3 class="title is-3">With CoLLEGe we can...</h3>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4" style="font-size: 20px;">Solve GRE Problems...</h3>
+        <div class="columns is-mobile">
+          <div class="column">
+            <figure class="image">
+              <img src="static/images/few_shot_gre.png" alt="CoLM Paper Architecture" style="width: 100%; height: auto;">
+              <figcaption class="has-text-centered mt-4">
+                <!-- Figure 1: CoLM Paper Architecture -->
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column">
+            <figure class="image">
+              <img src="static/images/few_shot_gre.png" alt="Second Image Description" style="width: 100%; height: auto;">
+              <figcaption class="has-text-centered mt-4">
+                <!-- Figure 2: Description of Second Image -->
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4" style="font-size: 20px;">Identify Twitter Slang...</h3>
+        <div class="columns is-mobile">
+          <figure class="image">
+            <img src="static/images/twitter_college.png" alt="CoLM Paper Architecture" style="width: 100%; height: auto;">
+            <figcaption class="has-text-centered mt-4">
+              <!-- Figure 1: CoLM Paper Architecture -->
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h3 class="title is-4" style="font-size: 20px;">& Define New Concepts</h3>
+        <div class="content">
+          <figure class="image mb-6">
+            <img src="static/images/college_willies.png" alt="CoLLEGe Willies Example" style="width: 100%; height: auto;">
+            <figcaption class="has-text-centered mt-4">
+              <!-- Figure 1: CoLLEGe Willies Example -->
+            </figcaption>
+          </figure>
+          <figure class="image">
+            <img src="static/images/college_mushroom.png" alt="Second Image Description" style="width: 100%; height: auto;">
+            <figcaption class="has-text-centered mt-4">
+              <!-- Figure 2: Description of Second Image -->
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 
