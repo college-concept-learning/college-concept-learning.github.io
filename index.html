@@ -45,7 +45,7 @@
   <script src="static/js/index.js"></script>
 </head>
 <body>
-
+  
 
   <section class="hero">
     <div class="hero-body">
@@ -127,7 +127,14 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
+<style>
+  .section.is-small {
+    padding: 1.5rem 1.5rem;
+  }
+  .section + .section {
+    padding-top: 0;
+  }
+</style>
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -174,7 +181,6 @@
   </div>
 </section>
 
-<!-- Second Paragaph -->
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -189,15 +195,30 @@
           <p>
             We train by minimizing <b>cross entropy losses</b> on positive and negative examples as well as <b>distilling from the base LLM</b>
           </p>
-          <figure class="image">
-            <img src="static/images/college_losses.png" alt="CoLM Losses" style="width: 100%; height: auto;">
-          </figure>  
+          <div class="columns is-mobile is-vcentered">
+            <div class="column is-flex is-align-items-center">
+              <figure class="image">
+                <img src="static/images/college_losses.png" alt="CoLM Losses" style="width: 100%; height: auto;">
+                <figcaption class="has-text-justified mt-2">
+                  We optimize using a combination of cross entropy losses and distillation losses.
+                </figcaption>
+              </figure>  
+            </div>
+            <div class="column">
+              <figure class="image">
+                <img src="static/images/college_data.png" alt="CoLM Data" style="width: 100%; height: auto;">
+                <figcaption class="has-text-justified mt-2">
+                Our dataset consists of few-shot support and query sequences adapted the Books3, Books2, and Pile-CC subsets of The Pile.
+                </figcaption>
+              </figure>  
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End Second Paragraph -->
+
 
 <!-- Second Paragaph -->
 <section class="section hero">
@@ -211,7 +232,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -239,7 +260,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -258,7 +279,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -281,6 +302,27 @@
     </div>
   </div>
 </section>
+
+
+<!-- Paper abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion & Future Work</h2>
+        <div class="content has-text-justified">
+          <p>
+            CoLLEGe can learn general purpose embeddings for new concepts which outperform In-Context Learning on all tasks without additional finetuning. Using task-general training, CoLLEGe can solve GRE problems involving new concepts, identify unknown slang terms, and generate definitions with only a few examples.
+          </p>
+          <p>
+            This opens the door for future work focusing on <b>online continual concept acquisition</b>, which consists of  incrementally identifying and compressing concepts from a stream of experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
 
 
